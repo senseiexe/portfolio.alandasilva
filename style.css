@@ -131,18 +131,6 @@ header .navegation li a:hover {
     opacity: 100%;
 }
 
-@media (max-width: 991px) {
-    header {
-        padding: 10px 20px;
-        flex-direction: column;
-    }
-
-    .banner {
-        padding: 150px 20px 50px;
-        flex-direction: column-reverse;
-    }
-}
-
 .formacao .content h1 {
     text-align: center;
     color: white;
@@ -159,14 +147,25 @@ header .navegation li a:hover {
 
 .formacao .icon {
     display: flex;
+    align-items: center;
     padding: 200px 20px;
+
+}
+
+.formacao .icon .html5 h3,
+.formacao .icon .css3 h3,
+.formacao .icon .js h3,
+.formacao .icon .python h3 {
+    color: white;
+    font-weight: 400;
+    text-shadow: black 1px 1px 2px;
 }
 
 .formacao .icon .html5:hover,
 .formacao .icon .css3:hover,
 .formacao .icon .js:hover,
 .formacao .icon .python:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
 }
 
 
@@ -184,9 +183,8 @@ header .navegation li a:hover {
     font-size: 1em;
 }
 
-.projetos .img {
-    padding: 20px 100px 100px;
-    text-align: center;
+.projetos img {
+    padding: 20px 250px;
 
 }
 
@@ -270,3 +268,94 @@ form input[type=submit]:hover {
     transform: translate3D(0px, 0px, 0px);
 }
 
+/*Fim da Animação*/
+
+@media (max-width: 991px) {
+    header {
+        padding: 10px 20px;
+        flex-direction: column;
+    }
+
+    .fundo {
+        padding: 150px 20px 50px;
+        flex-direction: column-reverse;
+    }
+
+    .banner img {
+        display: none;
+    }
+
+    .formacao .image .banner2 {
+        display: none;
+    }
+
+    .formacao .icon {
+
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .projetos img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.modal-conteiner {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .5);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mostrar .modal {
+    animation: modal .3s;
+}
+
+.modal {
+    background: white;
+    width: 60%;
+    min-width: 300px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 4px 4px 10px;
+    position: relative;
+}
+
+@keyframes modal {
+    from {
+        opacity: 0;
+        transform: translate3D(0, -60px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3D(0, 0, 0);
+    }
+}
+
+.fechar {
+    position: relative;
+    background: aqua;
+    border: 0;
+    color: white;
+    padding: 10px;
+    top: 50px;
+    left: 45%;
+    width: 50px;
+    height: 50px;
+    border-radius: 17px;
+    box-shadow: 4px 4px 10px black;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: 600;
+}
